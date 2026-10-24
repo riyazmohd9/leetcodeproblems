@@ -9,12 +9,12 @@ class Solution:
         def solve(root,num):
             if root == None:
                 return 0
+
             num = num*2 + root.val
             if root.left == None and root.right == None:
                 return num
-            l = solve(root.left,num)
-            r = solve(root.right,num) 
-            return l+r
+                
+            return solve(root.left,num)+solve(root.right,num) 
         return solve(root,0)
 
         
