@@ -11,9 +11,9 @@ class Solution:
             return 0
         if root.left != None and root.left.left == None and root.left.right == None:
             s += root.left.val
-        l = self.sumOfLeftLeaves(root.left)
-        r = self.sumOfLeftLeaves(root.right)
-        return l+r+s
+        s += self.sumOfLeftLeaves(root.left)
+        s += self.sumOfLeftLeaves(root.right)
+        return s
         
 
         
