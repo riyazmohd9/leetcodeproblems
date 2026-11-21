@@ -1,16 +1,20 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
+        d1 = {}
+        d2 = {}
         for i in s:
-            temp = s.count(i)
-            if i not in t:
-                return False
-            elif t.count(i)!= temp:
-                return False
+            if i not in d1:
+                d1[i] = 1
+            else:
+                d1[i] += 1
         for i in t:
-            temp = t.count(i)
-            if i not in s:
-                return False
-            elif s.count(i)!= temp:
-                return False
-        return True
+            if i not in d2:
+                d2[i] = 1
+            else:
+                d2[i] += 1
+        if d1 == d2:
+            return True
+        else:
+            return False
+        
         
